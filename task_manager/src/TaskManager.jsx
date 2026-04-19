@@ -10,6 +10,15 @@ function TaskManager() {
             addTask(event.target.elements.title.value);
         }
     }
+
+    function deleteTask(id) {
+        const updatedTasks = tasks.map((task) =>{
+            if (task.id != id) {
+            return task
+        }
+        });   
+        setTasks(updatedTasks);
+    }
     function addTask(taskTitle) {
         setTasks([
             ...tasks,
@@ -25,6 +34,9 @@ function TaskManager() {
                     checked={task.completed}
                     onClick={() => toggleTaskCompletion(task.id)}
                 />
+                <button className="remove-button" onClick={() => deleteTask(task.id)}>
+                    Delete
+                </button>
             </p>
         );
     });
@@ -50,9 +62,7 @@ function TaskManager() {
                 <button className="control-button" type="submit">
                     Add Task
                 </button>
-                <button className="control-button" type="submit">
-                    Remove Task
-                </button>
+                
             </form>
         </div>
     );
