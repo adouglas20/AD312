@@ -1,11 +1,14 @@
-import './App.css'
-import Counter from './Counter.jsx'
+import "./App.css";
+import Counter from "./Counter.jsx";
 function App() {
-  return (
-    <div>
-      <Counter />
-    </div>
-  )
+    return (
+        <div>
+            <h1 className="stateHeading">
+                State Management
+            </h1>
+            <Counter />
+        </div>
+    );
 }
 
-export default App
+export default App;
