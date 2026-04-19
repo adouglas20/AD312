@@ -8,15 +8,15 @@ function TaskManager() {
         event.preventDefault();
         if (event.target.elements.title.value.trim()) {
             addTask(event.target.elements.title.value);
+            event.target.elements.title.value = '';
         }
     }
 
     function deleteTask(id) {
-        const updatedTasks = tasks.map((task) =>{
-            if (task.id != id) {
-            return task
-        }
-        });   
+        const updatedTasks = tasks.filter((task) => {
+            return task.id !== id;
+           
+        });
         setTasks(updatedTasks);
     }
     function addTask(taskTitle) {
@@ -27,7 +27,7 @@ function TaskManager() {
     }
     const taskItems = tasks.map((task) => {
         return (
-            <p key={task.id}>
+            <li key={task.id}>
                 Task Title: {task.title} Completion Status:{' '}
                 <input
                     type="checkbox"
@@ -37,7 +37,7 @@ function TaskManager() {
                 <button className="remove-button" onClick={() => deleteTask(task.id)}>
                     Delete
                 </button>
-            </p>
+            </li>
         );
     });
 
@@ -53,7 +53,9 @@ function TaskManager() {
     }
     return (
         <div>
-            {taskItems}
+            <ul>
+                {taskItems}
+            </ul>
             <form className="form" method="post" onSubmit={handleSubmit}>
                 <div>
                     <label>Task title: </label>{' '}
