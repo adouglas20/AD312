@@ -1,0 +1,26 @@
+.control-button {
+    background-color: #1290f7;
+    color: rgb(255, 255, 255);
+    border: none;
+    padding: 0.5rem 1.5rem;
+    margin: 0.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    
+    
+}
+.control-button:disabled {
+    background-color: rgb(97, 97, 96);
+}
+.control-button:disabled:hover {
+    background-color: rgb(97, 97, 96);
+}
+.gallery-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+        /* optional: centers the group horizontally on the page */
+    gap: 10px;
+        /* optional: adds spacing between buttons and image */
+}

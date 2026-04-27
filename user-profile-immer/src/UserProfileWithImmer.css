@@ -1,0 +1,11 @@
+label {
+    font-weight: bold;
+}
+.profile{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: right;
+        /* optional: centers the group horizontally on the page */
+    gap: 10px;
+}
